@@ -68,7 +68,6 @@ file.c, 字符数: 50<br>
 file.c, 行数: 10<br>
 <br>
 例如：<br>
-<br>
 wc.exe -s -a –c -w *.c–e stop.txt –o –output.txt<br>
 输出结果保存在output.txt中，内容格式为：<br>
 file1.c, 字符数: 50<br>
