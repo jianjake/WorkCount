@@ -71,6 +71,7 @@ public class wc{
 					}
 				else System.out.println("请按照格式输入");
 			}
+			else System.out.println("请按照格式输入");
 			
 	}
 

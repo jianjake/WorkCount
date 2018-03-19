@@ -72,6 +72,8 @@ public class extendedFun {
         long blankLine = 0;  
         // 记录有效代码的行数  
         long codeLine = 0;   
+        //假注释
+        long notLine=0;
         if (file == null || !file.exists())   
             throw new FileNotFoundException(file + "，文件不存在！"); 
         BufferedReader br = null;  
@@ -92,22 +94,25 @@ public class extendedFun {
                /* 本行不是代码行，并且本行包括注释。一个有趣的例子是有些程序员会在单字符后面加注释：
                 *  }//注释
                 */
-                else if (line.startsWith("/*") && !line.endsWith("*/")) {  
+                else if (line.startsWith("/*") && !line.endsWith("*/")||((line.startsWith("{/*")||line.startsWith("}/*"))&&!line.endsWith("*/"))){
                     // 判断此行为"/*"开头的注释行  
                     commentLines++;  
                     comment = true;  
-                } else if (comment == true && !line.endsWith("*/")) {  
-                    // 为多行注释中的一行（不是开头和结尾）  
+                } else if (comment == true && !line.endsWith("*/")&&!line.startsWith("*/")) {  
+                    // 为多行注释中的一行（不是开头和结尾）
+                	notLine++;
                     commentLines++;  
-                } else if (comment == true && line.endsWith("*/")) {  
+                } else if (comment == true && (line.endsWith("*/")||line.startsWith("*/"))) {  
                     // 为多行注释的结束行  
                     commentLines++;  
                     comment = false;  
-                } else if (line.startsWith("//")|| line.startsWith("}//")||line.startsWith("{//")) {  
+                } else if (line.startsWith("//")|| line.startsWith("}//")||line.startsWith("{//")||
+                		    ((line.startsWith("{/*") ||line.startsWith("}/*")||line.startsWith("/*")) && line.endsWith("*/"))) {  
                     // 单行注释行  
                     commentLines++;  
                 } else {  
                     // 正常代码行  
+                	//System.out.println(line);
                     normalLines++;  
                 }  
             }    	
@@ -127,7 +132,7 @@ public class extendedFun {
             try{
      			//打开一个写文件器，构造函数中的第二个参数true表示以追加形式写文件
                 FileWriter writer = new FileWriter(outfile, true);
-                char[] message=(myfile+",代码行/空行/注释行:"+normalLines +"/"+whiteLines+"/"+commentLines+"\r\n").toCharArray();//换行"\r\n"不是"\n"
+                char[] message=(myfile+",代码行/空行/注释行:"+(normalLines+notLine)+"/"+whiteLines+"/"+(commentLines-notLine)+"\r\n").toCharArray();//换行"\r\n"不是"\n"
                 writer.write(message);
      			writer.close();
      		}
