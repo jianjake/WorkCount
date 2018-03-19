@@ -1,17 +1,18 @@
-# word-
-java编写一个统计字符数、单词数和行数的小程序
-#1  WordCount需求说明
-WordCount的需求可以概括为：对程序设计语言源文件统计字符数、单词数、行数，统计结果以指定格式输出到默认文件中，以及其他扩展功能，并能够快速地处理多个文件。
-
-可执行程序命名为：wc.exe，该程序处理用户需求的模式为：
-wc.exe [parameter] [input_file_name]
-存储统计结果的文件默认为result.txt，放在与wc.exe相同的目录下。
-
-
-##1.1 基本功能
-wc.exe -c file.c     //返回文件 file.c 的字符数
-wc.exe -w file.c     //返回文件 file.c 的单词总数
-wc.exe -l file.c     //返回文件 file.c 的总行数
+# word-<br>
+java编写一个统计字符数、单词数和行数的小程序<br>
+#1  WordCount需求说明<br>
+WordCount的需求可以概括为：对程序设计语言源文件统计字符数、单词数、行数，统计结果以指定格式输出到默认文件中，<br>
+以及其他扩展功能，并能够快速地处理多个文件。<br>
+<br>
+可执行程序命名为：wc.exe，该程序处理用户需求的模式为：<br>
+wc.exe [parameter] [input_file_name]<br>
+存储统计结果的文件默认为result.txt，放在与wc.exe相同的目录下。<br>
+<br>
+<br>
+##1.1 基本功能<br>
+wc.exe -c file.c     //返回文件 file.c 的字符数<br>
+wc.exe -w file.c     //返回文件 file.c 的单词总数<br>
+wc.exe -l file.c     //返回文件 file.c 的总行数<br>
 wc.exe -o outputFile.txt     //将结果输出到指定文件outputFile.txt
 注意：
 空格，水平制表符，换行符，均算字符。
