@@ -1,12 +1,12 @@
 package wordcount;
-//åŸºæœ¬åŠŸèƒ½
+//»ù±¾¹¦ÄÜ
 import java.io.*;
 import java.util.Set;
 import java.util.TreeMap;
 public class basecount {
-	//å­—ç¬¦æ•°ã€å•è¯æ•°å’Œè¡Œæ•°
+	//×Ö·ûÊı¡¢µ¥´ÊÊıºÍĞĞÊı
     public static String print(String action1,String sourcefile){
-    	int linecount=1;
+    	int linecount=0;
     	int charcount=0;
     	int wordcount=0;
 		File file=new File(sourcefile);
@@ -17,30 +17,34 @@ public class basecount {
 				BufferedReader br=new BufferedReader(isr);
 				String line=new String("");
 				StringBuffer sb=new StringBuffer();
-				 TreeMap<String, Integer> map = new TreeMap<>(); 
+				 TreeMap<String, Integer> map = new TreeMap<>();
+				 
 				while((line=br.readLine())!=null)
 				{
+					
 					linecount++;
 					sb.append(line);
 					charcount+=line.length();
  			        String[] split = line.split("\\s++|\\.|,|\\;|\\(|\\)|\\[|\\]|\\<|\\>|\\=|\\-|\\+|\\*|\\/|\\{|\\}|\\_");  
  			        for (int i = 0; i < split.length; i++) { 
-// 			          è·å–åˆ°æ¯ä¸€ä¸ªå•è¯  
+// 			          »ñÈ¡µ½Ã¿Ò»¸öµ¥´Ê  
  			            Integer integer = map.get(split[i]);  
-// 			          å¦‚æœè¿™ä¸ªå•è¯åœ¨mapä¸­æ²¡æœ‰ï¼Œèµ‹å€¼1  
+// 			          Èç¹ûÕâ¸öµ¥´ÊÔÚmapÖĞÃ»ÓĞ£¬¸³Öµ1  
  			            if(null==integer){  
  			                map.put(split[i], 1);  
  			            }else{  
-// 			              å¦‚æœæœ‰ï¼Œåœ¨åŸæ¥çš„ä¸ªæ•°ä¸ŠåŠ ä¸Šä¸€  
+// 			              Èç¹ûÓĞ£¬ÔÚÔ­À´µÄ¸öÊıÉÏ¼ÓÉÏÒ»  
  			                map.put(split[i], ++integer);  
  			            }  
  			        }  
  				}
-// 		      éå†ï¼Œæ ¹æ®keyè·å–æ‰€å¯¹åº”çš„value  
+				
+// 		      ±éÀú£¬¸ù¾İkey»ñÈ¡Ëù¶ÔÓ¦µÄvalue  
  		        Set<String> keySet = map.keySet();  
  		        for (String string : keySet)
- 		        	if(!(string.equals("")))
+ 		        	if(!(string.equals("")))//{
  		        	wordcount+=map.get(string);
+ 		        //	System.out.println(string);}
 				   br.close();
 				   isr.close();
 				   fis.close();
@@ -57,22 +61,22 @@ public class basecount {
 		}
             String message=null;
             if(action1.equals("-l"))
-                  message=(sourcefile+",   è¡Œæ•°ï¼š"+linecount+"\r\n");//æ¢è¡Œ"\r\n"ä¸æ˜¯"\n"
+                  message=(sourcefile+",   ĞĞÊı£º"+linecount+"\r\n");//»»ĞĞ"\r\n"²»ÊÇ"\n"
             else if(action1.equals("-c"))
-            	 message=(sourcefile+",   å­—ç¬¦æ•°ï¼š"+charcount+"\r\n");//æ¢è¡Œ"\r\n"ä¸æ˜¯"\n"
+            	 message=(sourcefile+",   ×Ö·ûÊı£º"+charcount+"\r\n");//»»ĞĞ"\r\n"²»ÊÇ"\n"
             else if(action1.equals("-w"))
-            	 message=(sourcefile+",   å•è¯æ•°ï¼š"+wordcount+"\r\n");//æ¢è¡Œ"\r\n"ä¸æ˜¯"\n"
+            	 message=(sourcefile+",   µ¥´ÊÊı£º"+wordcount+"\r\n");//»»ĞĞ"\r\n"²»ÊÇ"\n"
            return message;
     }
     
-   static void putAtoB(String message,String thefile){//å°†messageè¾“å‡ºåˆ°thefileä¸­
+   static void putAtoB(String message,String thefile){//½«messageÊä³öµ½thefileÖĞ
 	   try{
-			//æ‰“å¼€ä¸€ä¸ªå†™æ–‡ä»¶å™¨ï¼Œæ„é€ å‡½æ•°ä¸­çš„ç¬¬äºŒä¸ªå‚æ•°trueè¡¨ç¤ºä»¥è¿½åŠ å½¢å¼å†™æ–‡ä»¶
+			//´ò¿ªÒ»¸öĞ´ÎÄ¼şÆ÷£¬¹¹Ôìº¯ÊıÖĞµÄµÚ¶ş¸ö²ÎÊıtrue±íÊ¾ÒÔ×·¼ÓĞÎÊ½Ğ´ÎÄ¼ş
 			if(thefile==null)
 				thefile="result.txt";
 			FileWriter writer = new FileWriter(thefile, true);
            if(message.toCharArray()!=null)  writer.write(message.toCharArray());
-           else System.out.println("æ— è¯¥æ“ä½œ");
+           else System.out.println("ÎŞ¸Ã²Ù×÷");
 			writer.close();
 		}
 		catch(IOException e){
