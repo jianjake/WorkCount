@@ -6,7 +6,7 @@ import java.util.TreeMap;
 public class basecount {
 	//字符数、单词数和行数
     public static String print(String action1,String sourcefile){
-    	int linecount=1;
+    	int linecount=0;
     	int charcount=0;
     	int wordcount=0;
 		File file=new File(sourcefile);
@@ -17,13 +17,15 @@ public class basecount {
 				BufferedReader br=new BufferedReader(isr);
 				String line=new String("");
 				StringBuffer sb=new StringBuffer();
-				 TreeMap<String, Integer> map = new TreeMap<>(); 
+				 TreeMap<String, Integer> map = new TreeMap<>();
+				 
 				while((line=br.readLine())!=null)
 				{
+					
 					linecount++;
 					sb.append(line);
 					charcount+=line.length();
- 			        String[] split = line.split("\\s++|\\.|,|\\;|\\(|\\)|\\[|\\]|\\<|\\>|\\=|\\-|\\+|\\*|\\/|\\{|\\}");  
+ 			        String[] split = line.split("\\s++|\\.|,|\\;|\\(|\\)|\\[|\\]|\\<|\\>|\\=|\\-|\\+|\\*|\\/|\\{|\\}|\\_");  
  			        for (int i = 0; i < split.length; i++) { 
 // 			          获取到每一个单词  
  			            Integer integer = map.get(split[i]);  
@@ -36,11 +38,13 @@ public class basecount {
  			            }  
  			        }  
  				}
+				
 // 		      遍历，根据key获取所对应的value  
  		        Set<String> keySet = map.keySet();  
  		        for (String string : keySet)
- 		        	if(!(string.equals("")))
+ 		        	if(!(string.equals("")))//{
  		        	wordcount+=map.get(string);
+ 		        //	System.out.println(string);}
 				   br.close();
 				   isr.close();
 				   fis.close();

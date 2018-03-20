@@ -126,7 +126,7 @@ public class extendedFun {
 	            				//System.out.println(list[0]+" "+list[1]+" "+list[2]+"  "+list[3]+"  "+list[4]+"  "+list[5]);
 	            				basecount.putAtoB(basecount.print(list[0],array[i].getName()),list[5]);
 	            				basecount.putAtoB(basecount.print(list[1],array[i].getName()),list[5]);
-	            				basecount.putAtoB(basecount.print(list[1],array[i].getName()),list[5]);
+	            				basecount.putAtoB(basecount.print(list[2],array[i].getName()),list[5]);
 	            			}
 	            			//-a-l -c in.c-o out.txt
 	            			else if(list[0].equals("-a")

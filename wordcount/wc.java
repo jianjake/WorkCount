@@ -11,17 +11,13 @@ public class wc{
 			{
 				one=args[0];
 				two=args[1];
-				if(one.equals("-a"))
-					try {
+				if(one.equals("-a")&&two.endsWith(".c"))
 						//-a file.c
 						//System.out.println("morrdate");
 						basecount.putAtoB(extendedFun.moredata(two),null);
-					} catch (FileNotFoundException e) {
-						e.printStackTrace();
-					}
-				//-l(-c,-w) file.c
-				else if(one.equals("-l")||one.equals("-c")||one.equals("-w"))
-					basecount.putAtoB(basecount.print(one, two),null);
+				     //-l(-c,-w) file.c
+				else if((one.equals("-l")||one.equals("-c")||one.equals("-w"))&&two.endsWith(".c"))
+					 basecount.putAtoB(basecount.print(one, two),null);
 				else System.out.println("无该操作");							
 			}
 			else if(len==3)
@@ -45,17 +41,13 @@ public class wc{
 					else if(one.equals("-a")&&(two.equals("-l")||two.equals("-c")||two.equals("-w")))
 					{
 						basecount.putAtoB(basecount.print(two,three), null);
-						try {
-							basecount.putAtoB(extendedFun.moredata(three),null);
-						} catch (FileNotFoundException e) {
-							e.printStackTrace();
-						}
+						basecount.putAtoB(extendedFun.moredata(three),null);
 					}
 					else System.out.println("输入格式错误！");
 			          }
 				
 				//file.c -e stop.txt
-             else if(three.endsWith(".txt")&&two.equals("-e")){//停用词表,单词数
+             else if(three.endsWith(".txt")&&two.equals("-e")&&one.endsWith(".c")){//停用词表,单词数
           	   	basecount.putAtoB(	extendedFun.stopcount(one, three),null);
 				}
 				else System.out.println("输入格式错误！");
@@ -72,6 +64,7 @@ public class wc{
 							basecount.putAtoB(basecount.print(two, four), null);
 							basecount.putAtoB(basecount.print(three, four), null);
 								}
+						
 						//-s -l -w in.c
 						else if(one.equals("-s")&&(two.equals("-l")||two.equals("-c")||two.equals("-w")||two.equals("-a"))
 									&&(three.equals("-l")||three.equals("-c")||three.equals("-w")))//递归处理文件（简单统计单词、字符或行)
@@ -79,6 +72,7 @@ public class wc{
 									String[] list={two,three,four};
 									extendedFun.allfile(list);
 								}		
+						
 						//-a-l -w in.c
 						else if(one.equals("-a")&&(two.equals("-l")||two.equals("-c")||two.equals("-w")||two.equals("-a"))
 									&&(three.equals("-l")||three.equals("-c")||three.equals("-w")))
@@ -89,18 +83,17 @@ public class wc{
 								}				
 							else System.out.println("输入格式错误！");
 							}
+				
 				//-l(-c -w) in.c -o out.txt
 					else if((one.equals("-l")||one.equals("-w")||one.equals("-c"))&&two.endsWith(".c")
 							       &&three.equals("-o")&&four.endsWith(".txt"))
-					           basecount.putAtoB(basecount.print(one, two),four);
+					             basecount.putAtoB(basecount.print(one, two),four);
+				
 				//-a in.c -o out.txt
 					else if(one.equals("-a")&&two.endsWith(".c")
 							       &&three.equals("-o")&&four.endsWith(".txt"))
-						try {
 							basecount.putAtoB(extendedFun.moredata(two),four);
-						} catch (FileNotFoundException e) {
-							e.printStackTrace();
-						}
+				
 				//-w in.c -e out.txt
 					else if(one.equals("-w")&&two.endsWith(".c")&&three.equals("-e")&&four.endsWith(".txt"))
 					{
@@ -198,7 +191,7 @@ public class wc{
 						basecount.putAtoB(extendedFun.moredata(five),seven);	
 				}
 				//递归处理使用停用表后的单词数，指定输出
-				//-w in.c -e stop.txt -o out.txt
+				//-s -w in.c -e stop.txt -o out.txt
 				 else if(one.equals("-s")&&two.equals("-w")&&three.endsWith(".c")
 						&&four.equals("-e")&&five.endsWith(".txt")&&six.equals("-o")&&seven.endsWith(".txt"))
 						{
@@ -219,6 +212,7 @@ public class wc{
 				}
 				else System.out.println("无该操作");
 			}
+			
 			else if(len==8)	{one=args[0];two=args[1];three=args[2];four=args[3];five=args[4];six=args[5];seven=args[6];eight=args[7];
 			//-s -a   -w(-l.-c) in.c -e stop.txt -o out.txt 
 			// -s -l  -c file.c -e stop.txt -o out.txt
@@ -233,6 +227,7 @@ public class wc{
 		  
 			else System.out.println("请按照格式输入");
 		}
+			
 			else if(len==9){
 				one=args[0];two=args[1];three=args[2];four=args[3];five=args[4];six=args[5];seven=args[6];eight=args[7];night=args[8];
 				//-s -a   -w(-l,-c) -w(-l.-c) in.c -e stop.txt -o out.txt 
