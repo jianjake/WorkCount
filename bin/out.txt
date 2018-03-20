@@ -1,0 +1,127 @@
+filen.c,   行数：8
+file1.c,代码行/空行/注释行:10/3/9
+file.c, 单词数(停用后）：9
+adom.c,   行数：11
+adom.c,   单词数：57
+adom.c,   字符数：292
+adom.c,代码行/空行/注释行:11/0/0
+add.c,   行数：32
+add.c,   单词数：89
+add.c,代码行/空行/注释行:16/6/10
+add.c, 单词数(停用后）：75
+adom.c,   行数：11
+adom.c,   单词数：57
+adom.c,代码行/空行/注释行:11/0/0
+adom.c, 单词数(停用后）：57
+chartest.c,   行数：1
+chartest.c,   单词数：5
+chartest.c,代码行/空行/注释行:1/0/0
+chartest.c, 单词数(停用后）：6
+file.c,   行数：18
+file.c,   单词数：11
+file.c,代码行/空行/注释行:7/9/2
+file.c, 单词数(停用后）：9
+file1.c,   行数：22
+file1.c,   单词数：51
+file1.c,代码行/空行/注释行:10/3/9
+file1.c, 单词数(停用后）：51
+file2.c,   行数：22
+file2.c,   单词数：36
+file2.c,代码行/空行/注释行:10/3/9
+file2.c, 单词数(停用后）：28
+filen.c,   行数：8
+filen.c,   单词数：9
+filen.c,代码行/空行/注释行:4/4/0
+filen.c, 单词数(停用后）：8
+sort.c,   行数：16
+sort.c,   单词数：75
+sort.c,代码行/空行/注释行:12/2/2
+sort.c, 单词数(停用后）：64
+stop1.c,   行数：5
+stop1.c,   单词数：2
+stop1.c,代码行/空行/注释行:2/3/0
+stop1.c, 单词数(停用后）：2
+stoptest.c,   行数：24
+stoptest.c,   单词数：42
+stoptest.c,代码行/空行/注释行:14/5/5
+stoptest.c, 单词数(停用后）：38
+success.c,   行数：20
+success.c,   单词数：46
+success.c,代码行/空行/注释行:18/2/0
+success.c, 单词数(停用后）：41
+wordtest.c,   行数：4
+wordtest.c,   单词数：19
+wordtest.c,代码行/空行/注释行:4/0/0
+wordtest.c, 单词数(停用后）：19
+add.c,   行数：32
+add.c,   单词数：89
+add.c,   字符数：502
+adom.c,   行数：11
+adom.c,   单词数：57
+adom.c,   字符数：292
+chartest.c,   行数：1
+chartest.c,   单词数：5
+chartest.c,   字符数：30
+file.c,   行数：18
+file.c,   单词数：11
+file.c,   字符数：84
+file1.c,   行数：22
+file1.c,   单词数：51
+file1.c,   字符数：315
+file2.c,   行数：22
+file2.c,   单词数：36
+file2.c,   字符数：279
+filen.c,   行数：8
+filen.c,   单词数：9
+filen.c,   字符数：57
+sort.c,   行数：16
+sort.c,   单词数：75
+sort.c,   字符数：345
+stop1.c,   行数：5
+stop1.c,   单词数：2
+stop1.c,   字符数：7
+stoptest.c,   行数：24
+stoptest.c,   单词数：42
+stoptest.c,   字符数：362
+success.c,   行数：20
+success.c,   单词数：46
+success.c,   字符数：232
+wordtest.c,   行数：4
+wordtest.c,   单词数：19
+wordtest.c,   字符数：184
+add.c,   单词数：89
+add.c,   单词数：89
+add.c,代码行/空行/注释行:16/6/10
+adom.c,   单词数：57
+adom.c,   单词数：57
+adom.c,代码行/空行/注释行:11/0/0
+chartest.c,   单词数：5
+chartest.c,   单词数：5
+chartest.c,代码行/空行/注释行:1/0/0
+file.c,   单词数：11
+file.c,   单词数：11
+file.c,代码行/空行/注释行:7/9/2
+file1.c,   单词数：51
+file1.c,   单词数：51
+file1.c,代码行/空行/注释行:10/3/9
+file2.c,   单词数：36
+file2.c,   单词数：36
+file2.c,代码行/空行/注释行:10/3/9
+filen.c,   单词数：9
+filen.c,   单词数：9
+filen.c,代码行/空行/注释行:4/4/0
+sort.c,   单词数：75
+sort.c,   单词数：75
+sort.c,代码行/空行/注释行:12/2/2
+stop1.c,   单词数：2
+stop1.c,   单词数：2
+stop1.c,代码行/空行/注释行:2/3/0
+stoptest.c,   单词数：42
+stoptest.c,   单词数：42
+stoptest.c,代码行/空行/注释行:14/5/5
+success.c,   单词数：46
+success.c,   单词数：46
+success.c,代码行/空行/注释行:18/2/0
+wordtest.c,   单词数：19
+wordtest.c,   单词数：19
+wordtest.c,代码行/空行/注释行:4/0/0
