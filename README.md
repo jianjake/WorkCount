@@ -1,4 +1,4 @@
-# word-<br>
+# WorkCount-<br>
 java编写一个统计字符数、单词数和行数的小程序<br>
 1  WordCount需求说明<br>
 WordCount的需求可以概括为：对程序设计语言源文件统计字符数、单词数、行数，统计结果以指定格式输出到默认文件中，<br>
